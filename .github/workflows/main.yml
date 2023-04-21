@@ -18,7 +18,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Package code
-        run: zip -r my_function.zip .
+        run: zip -r summarize_text.zip .
       - name: Deploy to AWS Lambda
         uses: appleboy/lambda-action@master
         with:
