@@ -18,7 +18,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Package code
-        run: zip -r summarize_text.zip .
+        run: zip -r summarize_text.zip 
       - name: Deploy to AWS Lambda
         uses: appleboy/lambda-action@master
         with:
@@ -26,6 +26,6 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: me-south-1
           function_name: summarize_text
-          zip_file: bundle.zip
+          zip_file: summarize_text.zip
 
   
